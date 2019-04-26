@@ -82,6 +82,25 @@ projectsRouter.get('/:id', (req, res) => {
         });
 });
 
+projectsRouter.get('/:id/actions', (req, res) => {
+    db.getProjectActions(req.params.id)
+        .then(dbRes => {
+            if (dbRes)
+                res.status(200).send({
+                    data: dbRes
+                });
+            else
+                res.status(422).send({
+                    message: '422 - Invalid ID'
+                });
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: '500 - Internal Server Error'
+            });
+        });
+});
+
 projectsRouter.post('/', (req, res) => {
     try {
         //Validation Required Fields
