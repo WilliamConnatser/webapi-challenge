@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev-server": "nodemon index.js",
+    "dev-client": "cd client && npm run start",
+    "dev": "concurrently --names \"server,client\" \"npm run dev-server --silent\" \"npm run dev-client --silent\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   },
   "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Node-Express#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "helmet": "^3.16.0",
     "knex": "^0.16.5",

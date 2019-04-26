@@ -26,13 +26,25 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Mention two parts of Express that you learned about this week.
 
+    Router and Server
+
 - [ ] Describe Middleware?
+
+    Intercepts requests and responses and alters them based on arbitrary logic
 
 - [ ] Describe a Resource?
 
+    The server itself.
+
 - [ ] What can the API return to help clients know if a request was successful?
 
+    Status Code 200
+
 - [ ] How can we partition our application into sub-applications?
+
+    Create multiple routers and/or servers
+
+
 
 ## Project Setup
 
